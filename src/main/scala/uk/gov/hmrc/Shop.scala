@@ -5,6 +5,11 @@ package uk.gov.hmrc
   */
 object Shop {
 
+  val catalogue = Map(
+    "apple" -> BigDecimal(0.6),
+    "orange" -> BigDecimal(0.25)
+  )
+
   def main(args: Array[String]): Unit = {
     val cost = purchase(args)
 
@@ -13,5 +18,11 @@ object Shop {
     println(receipt)
   }
 
-  def purchase(basket: Seq[String]): BigDecimal = ???
+  def purchase(basket: Seq[String]): BigDecimal = costOf(basket)
+
+  private def costOf(items: Seq[String]) = {
+    items
+      .flatMap(catalogue.get)
+      .sum
+  }
 }
