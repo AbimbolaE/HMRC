@@ -14,8 +14,8 @@ class ShopSpecification  extends Specification {
      An Apple should cost 0.60p                     ${ `An Apple should cost 0.60p` }
      An Orange should cost 0.25p                    ${ `An Orange should cost 0.25p` }
      An Apple and An Orange should cost 0.85p       ${ `An Apple and An Orange should cost 0.85p` }
-     Some fruits (Apple. Apple, Orange, Apple) should cost 2.05  ${ `Some fruits (Apple. Apple, Orange, Apple) should cost 2.05` }
-     Some fruits (Orange, Orange, Orange, Apple, Apple) should cost 1.95  ${ `Some fruits (Orange, Orange, Orange, Apple, Apple) should cost 1.95` }
+     Some fruits (Apple. Apple, Orange, Apple) should cost 1.45  ${ `Some fruits (Apple. Apple, Orange, Apple) should cost 1.45` }
+     Some fruits (Orange, Orange, Orange, Apple, Apple) should cost 1.10  ${ `Some fruits (Orange, Orange, Orange, Apple, Apple) should cost 1.10` }
 
   """
   def `An Apple should cost 0.60p` = {
@@ -30,11 +30,11 @@ class ShopSpecification  extends Specification {
     Shop.purchase(Array("apple", "orange")) === 0.85
   }
 
-  def `Some fruits (Apple. Apple, Orange, Apple) should cost 2.05` = {
-    Shop.purchase(Array("apple", "apple", "orange", "apple")) === 2.05
+  def `Some fruits (Apple. Apple, Orange, Apple) should cost 1.45` = {
+    Shop.purchase(Array("apple", "apple", "orange", "apple")) === 1.45
   }
 
-  def `Some fruits (Orange, Orange, Orange, Apple, Apple) should cost 1.95` = {
-    Shop.purchase(Array("orange", "orange", "orange", "apple", "apple")) === 1.95
+  def `Some fruits (Orange, Orange, Orange, Apple, Apple) should cost 1.10` = {
+    Shop.purchase(Array("orange", "orange", "orange", "apple", "apple")) === 1.10
   }
 }
